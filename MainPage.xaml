@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BMI_Calculator_Mobile_App.MainPage">
+
+    <Grid RowDefinitions="Auto, Auto, *, *, Auto"
+          ColumnDefinitions="*, *"
+          ColumnSpacing="10"
+          RowSpacing="5"
+          Margin="15">
+        <Label Text="BMI Calculator"
+               Grid.Row="0"
+               Grid.ColumnSpan="2"
+               FontAttributes="Bold"
+               FontSize="Large"
+               TextColor="White"/>
+        <Border Grid.Row="1"
+                Grid.Column="0"
+                x:Name="maleBorder"
+                Margin="10"
+                StrokeThickness="4"
+                Stroke="Transparent">
+            <Image Source="male.png"
+                   HeightRequest="350"
+                   x:Name="maleImg"/>
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer x:Name="maleTap" Tapped="maleTap_Tapped"/>
+            </Border.GestureRecognizers>
+        </Border>
+        <Border Grid.Row="1"
+                Grid.Column="1"
+                x:Name="femaleBorder"
+                Margin="10"
+                StrokeThickness="4"
+                Stroke="Transparent">
+            <Image Source="female.png"
+                   HeightRequest="350"
+                  />
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer x:Name="femaleTap" Tapped="femaleTap_Tapped"/>
+            </Border.GestureRecognizers>
+        </Border>
+        <Border Grid.Row="2"
+               Grid.ColumnSpan="2"
+               Background="Transparent"
+               x:Name="heightBorder">
+            <VerticalStackLayout VerticalOptions="Center">
+                <Label Text="Height (Inches)"
+                       FontSize="32"
+                       HorizontalOptions="Center"/>
+                <Slider ThumbColor="Blue"
+                        Minimum="10"
+                        Maximum="100"
+                        Value="50"
+                        x:Name="heightSlider"
+                        ValueChanged="heightSlider_ValueChanged"/>
+                <Label TextColor="White"
+                       x:Name="heightLabel"
+                       FontSize="24"
+                       HorizontalTextAlignment="Center"/>
+            </VerticalStackLayout>
+        </Border>
+        <Border Grid.Row="3"
+                Grid.ColumnSpan="2"
+                BackgroundColor="Transparent"
+                x:Name="weightBorder">
+            <VerticalStackLayout VerticalOptions="Center">
+                <Label Text="Weight (Lbs)"
+                       FontSize="32"
+                       HorizontalOptions="Center"/>
+                <Slider ThumbColor="Blue"
+                        Minimum="10"
+                        Maximum="500"
+                        Value="50"
+                        x:Name="weightSlider"
+                        ValueChanged="weightSlider_ValueChanged"/>
+                <Label TextColor="White"
+                       FontSize="24"
+                       x:Name="weightLabel"
+                       HorizontalTextAlignment="Center"/>
+            </VerticalStackLayout>
+        </Border>
+        <Button Grid.Row="4"
+                Grid.ColumnSpan="2"
+                Text="Calculate BMI"
+                FontSize="Large"
+                x:Name="calculateBtn"
+                Clicked="calculateBtn_Clicked"/>
+    </Grid>
+</ContentPage>
