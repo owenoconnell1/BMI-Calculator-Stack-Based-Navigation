@@ -3,14 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BMI_Calculator_Mobile_App.ResultsPage"
              Title="ResultsPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="BMI Results" 
-            FontSize="32"
-            HorizontalOptions="Center"/>
-        <Label
-            x:Name="resultsLabel"
-            FontSize="24"
-            />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="10"
+            Spacing="10">
+            <Label 
+                Text="BMI Results" 
+                FontSize="32"
+                HorizontalOptions="Center"/>
+            <Label
+                x:Name="resultsLabel"
+                FontSize="24"
+                />
+            <Button
+                Text="Back"
+                x:Name="resultsBackBtn"
+                Clicked="resultsBackBtn_Clicked"
+                />
+            <Button
+                Text="Recommendations"
+                x:Name="recButton"
+                Clicked="recBtn_Clicked"
+                />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
+    

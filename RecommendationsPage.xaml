@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BMI_Calculator_Mobile_App.RecommendationsPage"
+             Title="RecommendationsPage">
+    <VerticalStackLayout
+        Padding="10"
+        Spacing="10">
+        <Label 
+            Text="Health Recommendations"
+            HorizontalOptions="Center" 
+            />
+        <Label
+            x:Name="recommendationsLabel"
+            FontSize="18"
+            />
+        <Button
+            Text="Back"
+            x:Name="resultsBackBtn"
+            Clicked="recBackBtn_Clicked"
+            />
+        <Button
+            Text="Home"
+            x:Name="recHomeButton"
+            Clicked="recHomeBtn_Clicked"
+            />
+    </VerticalStackLayout>
+</ContentPage>
